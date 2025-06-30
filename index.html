@@ -8,7 +8,7 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       background-color: #f4f4f4;
       color: #333;
     }
@@ -20,172 +20,112 @@
       justify-content: space-between;
       align-items: center;
     }
-    header nav a {
+    .logo-title {
+      display: flex;
+      align-items: center;
+    }
+    .logo-title img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    nav a {
       color: white;
       margin: 0 1em;
       text-decoration: none;
     }
-    .logo {
-      text-align: center;
-      margin-top: 1em;
-    }
-    .logo img {
-      width: 200px;
-    }
-    .about, .article-of-the-day, .all-articles, .social {
+    .section {
       padding: 2em;
       text-align: center;
     }
-    .about { background-color: #e3f2fd; }
-    .article-of-the-day { background-color: #fff; }
-    .all-articles { background-color: #e9ecef; }
-    .social { background-color: #1e1e2f; color: white; }
-    .all-articles .card {
+    .article-title {
+      color: #007bff;
+    }
+    .button {
+      background-color: #1e1e2f;
+      color: white;
+      border: none;
+      padding: 0.5em 1em;
+      margin-top: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .card {
       background: white;
       padding: 1em;
       margin: 1em auto;
       max-width: 600px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    a.button {
-      display: inline-block;
-      margin-top: 1em;
-      padding: 0.5em 1em;
-      background-color: #1e1e2f;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     footer {
       background-color: #1e1e2f;
       color: white;
-      padding: 2em;
       text-align: center;
+      padding: 1em;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Open AI Today</h1>
+    <div class="logo-title">
+      <img src="open-ai-today-logo.png" alt="Logo">
+      <h1>Open AI Today</h1>
+    </div>
     <nav>
-      <a href="#">Inicio</a>
       <a href="#quienes-somos">¿Quiénes somos?</a>
       <a href="#articulo-del-dia">Artículo del día</a>
-      <a href="#articulos">Artículos</a>
+      <a href="#articulos">Artículos anteriores</a>
       <a href="#instagram">Instagram</a>
     </nav>
   </header>
 
-  <div class="logo">
-    <img src="open-ai-today-logo.png" alt="Logo Open AI Today">
-  </div>
-
-  <section class="about" id="quienes-somos">
+  <section class="section" id="quienes-somos" style="background-color: #e8f4ff;">
     <h2>¿Quiénes somos?</h2>
-    <p>Open AI Today es una plataforma creada para compartir artículos diarios y actualizados sobre inteligencia artificial. Nuestro objetivo es ayudar a jóvenes, estudiantes y curiosos a entender el mundo de la IA de forma clara, moderna y accesible.</p>
-    <p>Cada día publicamos contenido relacionado con conceptos clave, noticias, tutoriales y aplicaciones reales de la inteligencia artificial. Nuestro sitio está optimizado para que sea fácil de leer, rápido de usar y siempre actualizado.</p>
+    <p>Open AI Today es una plataforma creada para compartir artículos diarios sobre inteligencia artificial. Nuestro objetivo es ayudar a jóvenes, estudiantes y curiosos a entender el mundo de la IA de forma clara, moderna y accesible.</p>
+    <p>Cada día subimos contenido relacionado con noticias, tutoriales y temas clave. ¡Síguenos para mantenerte al día!</p>
   </section>
 
-  <section class="article-of-the-day" id="articulo-del-dia">
-    <section id="articulo-del-dia">
-  <h2>Artículo del día</h2>
-  <div id="daily-article">
-    <!-- Aquí va el contenido del artículo del día (se actualizará con JavaScript) -->
-  </div>
-</section>
+  <section class="section" id="articulo-del-dia">
+    <h2 class="article-title">🧠 Artículo del día</h2>
+    <h3 class="article-title">¿La IA puede tener emociones? 🤖❤️</h3>
+    <p><strong>Publicado el:</strong> 30 de junio de 2025</p>
+    <button class="button" onclick="document.getElementById('articulo-completo').style.display='block'">Leer más</button>
+    <div id="articulo-completo" style="display:none; text-align:left; max-width:600px; margin: 1em auto;">
+      <p>La inteligencia artificial ha avanzado a pasos gigantes en las últimas décadas. Hoy en día, las máquinas pueden reconocer rostros, responder preguntas, escribir textos e incluso mantener conversaciones naturales. Pero... ¿pueden sentir emociones?</p>
+      <p><strong>La respuesta corta es:</strong> <strong>no, al menos no como los humanos</strong>. Las emociones humanas están ligadas a procesos biológicos complejos, como las hormonas, la memoria, la experiencia personal y la conciencia.</p>
+      <p>Sin embargo, algunos sistemas de IA están diseñados para <strong>simular emociones</strong>, como asistentes virtuales que responden con empatía o robots que "parecen tristes". Esto no significa que sientan algo real.</p>
+      <p><strong>¿Por qué simular emociones?</strong> Porque mejora la conexión con humanos, en educación, salud o atención al cliente.</p>
+      <p><strong>Conclusión:</strong> Por ahora, la IA no tiene emociones reales. Pero puede imitarlas muy bien. ¿Tendremos conciencia artificial en el futuro? Aún no se sabe.</p>
+      <p><em>Por Benkhofer</em></p>
+    </div>
+  </section>
 
-<section id="articulos-pasados">
-  <h2>Artículos anteriores</h2>
-  <div id="old-articles">
-    <!-- Aquí se irán colocando automáticamente los artículos antiguos -->
-  </div>
-</section>
-
-  <h2>🧠 Artículo del día</h2>
-  <h3>¿La IA puede tener emociones? 🤖❤️</h3>
-  <p><strong>Publicado el:</strong> 30 de junio de 2025</p>
-  <p>La inteligencia artificial ha avanzado a pasos gigantes en las últimas décadas. Hoy en día, las máquinas pueden reconocer rostros, responder preguntas, escribir textos e incluso mantener conversaciones naturales. Pero... ¿pueden sentir emociones?</p>
-  
-  <p>La respuesta corta es: <strong>no, al menos no como los humanos</strong>. Las emociones humanas están ligadas a procesos biológicos complejos, como las hormonas, la memoria, la experiencia personal y la conciencia. La IA, en cambio, funciona a partir de algoritmos matemáticos que procesan datos.</p>
-
-  <p>Sin embargo, algunos sistemas de IA están diseñados para <strong>simular emociones</strong>. Por ejemplo, asistentes virtuales que detectan el tono de voz y responden con empatía, o robots que "parecen tristes" si pierden en un juego. Esta simulación no implica que la máquina realmente esté sintiendo algo, sino que simplemente está ejecutando reglas programadas para parecer emocional.</p>
-
-  <p><strong>¿Por qué simular emociones entonces?</strong> Porque mejora la interacción con los humanos. En áreas como la educación, la salud o el servicio al cliente, una IA que “parece” emocional puede generar más confianza, comprensión y conexión con los usuarios.</p>
-
-  <p><strong>Conclusión:</strong> por ahora, la IA no tiene emociones reales. Pero puede imitarlas de forma convincente. ¿Será posible en el futuro desarrollar una conciencia artificial? Esa es una pregunta que los científicos aún están tratando de responder.</p>
-
-  <p><em>Por Open AI Today</em></p>
-</section>
-
-
-  <section class="all-articles" id="articulos">
+  <section class="section" id="articulos" style="background-color: #e9ecef;">
     <h2>Todos los artículos</h2>
+
     <div class="card">
       <h3>La ética en la IA</h3>
       <p>Exploramos los dilemas morales del uso de la inteligencia artificial en la sociedad moderna.</p>
-      <a href="#" class="button">Leer más</a>
+      <button class="button">Leer más</button>
     </div>
+
     <div class="card">
       <h3>Aplicaciones de la IA en medicina</h3>
       <p>Desde diagnósticos automáticos hasta robots cirujanos, descubre cómo la IA está transformando la salud.</p>
-      <a href="#" class="button">Leer más</a>
+      <button class="button">Leer más</button>
     </div>
   </section>
 
-  <section class="social" id="instagram">
+  <section class="section" id="instagram">
     <h2>Síguenos en Instagram</h2>
     <p>¡Publicamos novedades y curiosidades diarias sobre IA!</p>
-    <a href="https://instagram.com/openaitoday" class="button" target="_blank">@openaitoday</a>
+    <p><strong>@openaitoday</strong></p>
   </section>
 
   <footer>
     <p>© 2025 Open AI Today | Todos los derechos reservados</p>
   </footer>
-  <script>
-  const articleDelDia = {
-    titulo: "¿Puede la IA ser más creativa que un humano?",
-    resumen: "Exploramos cómo la IA está revolucionando el arte, la música y la escritura.",
-    fecha: new Date().toISOString(),
-  };
-
-  const guardarArticuloActual = () => {
-    localStorage.setItem("articuloDia", JSON.stringify(articleDelDia));
-  };
-
-  const cargarArticulo = () => {
-    const actual = JSON.parse(localStorage.getItem("articuloDia"));
-    const contenedor = document.getElementById("daily-article");
-    const viejos = document.getElementById("old-articles");
-
-    if (!actual) {
-      guardarArticuloActual(); // primer uso
-      return cargarArticulo();
-    }
-
-    const ahora = new Date();
-    const fechaArticulo = new Date(actual.fecha);
-    const msEnUnDia = 1000 * 60 * 60 * 24;
-
-    if ((ahora - fechaArticulo) < msEnUnDia) {
-      contenedor.innerHTML = `
-        <h3>${actual.titulo}</h3>
-        <p>${actual.resumen}</p>
-        <a href="#" class="button">Leer artículo completo</a>
-      `;
-    } else {
-      contenedor.innerHTML = `<p>No hay artículo del día disponible.</p>`;
-      viejos.innerHTML += `
-        <div class="card">
-          <h4>${actual.titulo}</h4>
-          <a href="#" class="button">Leer más</a>
-        </div>
-      `;
-    }
-  };
-
-  cargarArticulo();
-</script>
-
 </body>
 </html>
