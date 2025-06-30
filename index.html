@@ -88,6 +88,20 @@
   </section>
 
   <section class="article-of-the-day" id="articulo-del-dia">
+    <section id="articulo-del-dia">
+  <h2>Artículo del día</h2>
+  <div id="daily-article">
+    <!-- Aquí va el contenido del artículo del día (se actualizará con JavaScript) -->
+  </div>
+</section>
+
+<section id="articulos-pasados">
+  <h2>Artículos anteriores</h2>
+  <div id="old-articles">
+    <!-- Aquí se irán colocando automáticamente los artículos antiguos -->
+  </div>
+</section>
+
   <h2>🧠 Artículo del día</h2>
   <h3>¿La IA puede tener emociones? 🤖❤️</h3>
   <p><strong>Publicado el:</strong> 30 de junio de 2025</p>
@@ -128,5 +142,50 @@
   <footer>
     <p>© 2025 Open AI Today | Todos los derechos reservados</p>
   </footer>
+  <script>
+  const articleDelDia = {
+    titulo: "¿Puede la IA ser más creativa que un humano?",
+    resumen: "Exploramos cómo la IA está revolucionando el arte, la música y la escritura.",
+    fecha: new Date().toISOString(),
+  };
+
+  const guardarArticuloActual = () => {
+    localStorage.setItem("articuloDia", JSON.stringify(articleDelDia));
+  };
+
+  const cargarArticulo = () => {
+    const actual = JSON.parse(localStorage.getItem("articuloDia"));
+    const contenedor = document.getElementById("daily-article");
+    const viejos = document.getElementById("old-articles");
+
+    if (!actual) {
+      guardarArticuloActual(); // primer uso
+      return cargarArticulo();
+    }
+
+    const ahora = new Date();
+    const fechaArticulo = new Date(actual.fecha);
+    const msEnUnDia = 1000 * 60 * 60 * 24;
+
+    if ((ahora - fechaArticulo) < msEnUnDia) {
+      contenedor.innerHTML = `
+        <h3>${actual.titulo}</h3>
+        <p>${actual.resumen}</p>
+        <a href="#" class="button">Leer artículo completo</a>
+      `;
+    } else {
+      contenedor.innerHTML = `<p>No hay artículo del día disponible.</p>`;
+      viejos.innerHTML += `
+        <div class="card">
+          <h4>${actual.titulo}</h4>
+          <a href="#" class="button">Leer más</a>
+        </div>
+      `;
+    }
+  };
+
+  cargarArticulo();
+</script>
+
 </body>
 </html>
