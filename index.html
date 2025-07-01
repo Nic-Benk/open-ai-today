@@ -58,6 +58,7 @@
       max-width: 600px;
       border-radius: 10px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-align: left;
     }
     footer {
       background-color: #1e1e2f;
@@ -66,6 +67,18 @@
       padding: 1em;
     }
   </style>
+  <script>
+    function toggleArticulo(id, boton) {
+      const contenido = document.getElementById(id);
+      if (contenido.style.display === "none") {
+        contenido.style.display = "block";
+        boton.innerText = "Leer menos";
+      } else {
+        contenido.style.display = "none";
+        boton.innerText = "Leer más";
+      }
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -87,51 +100,41 @@
     <p>Cada día subimos contenido relacionado con noticias, tutoriales y temas clave. ¡Síguenos para mantenerte al día!</p>
   </section>
 
-<section class="article-of-the-day" id="articulo-del-dia">
-  <h2>🧠 Artículo del día</h2>
-  <div class="card" id="articulo-julio-2025">
-    <h3 style="color:blue;">Revolución de la Inteligencia Artificial: Avances y Perspectivas (Julio 2025)</h3>
-    <p><strong>Publicado el:</strong> 1 de July de 2025</p>
-    <a href="#articulo2" class="button">Leer más</a>
-  </div>
-</section>
-
-<section class="all-articles" id="articulos">
-  <h2>Todos los artículos</h2>
-
-  <div class="card">
-    <h3>La ética en la IA</h3>
-    <p>Exploramos los dilemas morales del uso de la inteligencia artificial en la sociedad moderna.</p>
-    <a href="#" class="button">Leer más</a>
-  </div>
-
-  <div class="card">
-    <h3>Aplicaciones de la IA en medicina</h3>
-    <p>Desde diagnósticos automáticos hasta robots cirujanos, descubre cómo la IA está transformando la salud.</p>
-    <a href="#" class="button">Leer más</a>
-  </div>
-
-  <div class="card">
-    <h3 style="color:blue;">¿La IA puede tener emociones? 🤖❤️</h3>
-    <p><strong>Publicado el:</strong> 30 de junio de 2025</p>
-    <a href="#articulo1" class="button">Leer más</a>
-  </div>
-</section>
-
+  <section class="section" id="articulo-del-dia">
+    <h2 class="article-title">🧠 Artículo del día</h2>
+    <div class="card">
+      <h3 style="color:blue;">Revolución de la Inteligencia Artificial: Avances y Perspectivas (Julio 2025)</h3>
+      <p><strong>Publicado el:</strong> 1 de julio de 2025</p>
+      <button class="button" onclick="toggleArticulo('contenido-articulo-dia', this)">Leer más</button>
+      <div id="contenido-articulo-dia" style="display: none;">
+        <p>La inteligencia artificial (IA) avanza a pasos agigantados, trascendiendo laboratorios y convirtiéndose en protagonista de industrias tan diversas como la salud, la robótica, la investigación científica y las comunicaciones. En este artículo exploramos los hitos más recientes y su impacto potencial en la sociedad.</p>
+        <p><strong>1. IA Médica:</strong> Microsoft presentó el Microsoft AI Diagnostic Orchestrator (MAI-DxO), alcanzando una tasa de acierto del 85,5% frente al ~20% de médicos humanos. Promete reducir costos, agilizar diagnósticos y redefinir la asistencia médica.</p>
+        <p><strong>2. Robots Humanoides:</strong> Primer torneo de fútbol autónomo en China con robots humanoides. Aunque torpes, avanzan hacia servicios robóticos más eficientes.</p>
+        <p><strong>3. Meta y Superinteligencia:</strong> Meta invierte 15.000 millones USD para competir con OpenAI y Google, promoviendo IA open-source.</p>
+        <p><strong>4. IA en Genómica:</strong> AlphaGenome de DeepMind interpreta secuencias del genoma y predice efectos de mutaciones con alta precisión.</p>
+        <p><strong>5. IA de Consumo:</strong> Apple lanzará un Shortcuts potenciado por IA que automatiza rutinas personales con GPT-like integrado.</p>
+        <p><strong>6. Inversión Europea:</strong> 200.000 millones EUR movilizados por la UE para liderar en hardware y software de IA.</p>
+        <p><strong>Conclusión:</strong> La IA evoluciona hacia un futuro más colaborativo, autónomo y presente en todos los ámbitos. <em>Por Benkhofer</em></p>
+      </div>
+    </div>
+  </section>
 
   <section class="section" id="articulos" style="background-color: #e9ecef;">
     <h2>Todos los artículos</h2>
-
     <div class="card">
       <h3>La ética en la IA</h3>
       <p>Exploramos los dilemas morales del uso de la inteligencia artificial en la sociedad moderna.</p>
-      <button class="button">Leer más</button>
+      <a class="button" href="#">Leer más</a>
     </div>
-
     <div class="card">
       <h3>Aplicaciones de la IA en medicina</h3>
       <p>Desde diagnósticos automáticos hasta robots cirujanos, descubre cómo la IA está transformando la salud.</p>
-      <button class="button">Leer más</button>
+      <a class="button" href="#">Leer más</a>
+    </div>
+    <div class="card">
+      <h3 style="color:black;">¿La IA puede tener emociones? 🤖❤️</h3>
+      <p><strong>Publicado el:</strong> 30 de junio de 2025</p>
+      <a class="button" href="#">Leer más</a>
     </div>
   </section>
 
