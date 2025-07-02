@@ -174,5 +174,58 @@
   <footer>
     <p>© 2025 Open AI Today | Todos los derechos reservados</p>
   </footer>
+  <section id="reseñas" style="padding: 2em; background-color: #f4f4f4;">
+  <h2 style="text-align: center; margin-bottom: 1em;">❤️ Reseñas de nuestros lectores</h2>
+
+  <form id="form-reseña" style="max-width: 600px; margin: 0 auto; text-align: center;">
+    <textarea id="texto-reseña" placeholder="Escribe tu opinión..." rows="4" style="width: 100%; padding: 1em; border-radius: 8px; border: 1px solid #ccc;"></textarea>
+    <br><br>
+    <button type="submit" style="background-color: #1e1e2f; color: white; padding: 0.5em 1em; border: none; border-radius: 8px;">Enviar reseña</button>
+  </form>
+
+  <div id="lista-reseñas" style="max-width: 600px; margin: 2em auto;"></div>
+</section>
+
+<script>
+  const form = document.getElementById('form-reseña');
+  const texto = document.getElementById('texto-reseña');
+  const lista = document.getElementById('lista-reseñas');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (texto.value.trim() === "") return;
+
+    const reseña = document.createElement('div');
+    reseña.style.border = '1px solid #ddd';
+    reseña.style.borderRadius = '8px';
+    reseña.style.padding = '1em';
+    reseña.style.marginBottom = '1em';
+    reseña.style.backgroundColor = 'white';
+
+    const contenido = document.createElement('p');
+    contenido.textContent = texto.value;
+
+    const likeBtn = document.createElement('button');
+    likeBtn.textContent = "❤️ 0";
+    likeBtn.style.marginTop = '0.5em';
+    likeBtn.style.border = 'none';
+    likeBtn.style.cursor = 'pointer';
+    likeBtn.style.background = 'transparent';
+    likeBtn.style.fontSize = '1.1em';
+
+    let likes = 0;
+    likeBtn.addEventListener('click', function() {
+      likes++;
+      likeBtn.textContent = `❤️ ${likes}`;
+    });
+
+    reseña.appendChild(contenido);
+    reseña.appendChild(likeBtn);
+    lista.prepend(reseña);
+
+    texto.value = "";
+  });
+</script>
+
 </body>
 </html>
